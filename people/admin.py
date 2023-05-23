@@ -16,4 +16,4 @@ class UserAdmin(DefaultUserAdmin):
 
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
-admin.site.register(UserProfile)
+# admin.site.register(UserProfile)
