@@ -9,7 +9,7 @@ class Project(models.Model):
     date = models.DateField()
     brief_description = models.TextField(blank=True, null=True, default="No Brief Description for this project")
     detail_description = models.TextField(blank=True, null=True, default="No Detail Description for this project")
-    project_picture = models.ImageField(upload_to='static/projects/', default='static/projects/default.png')
+    project_picture = models.ImageField(upload_to='static/project-photos/', default='static/project-photos/default.png')
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
