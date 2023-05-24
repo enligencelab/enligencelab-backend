@@ -8,7 +8,7 @@ from utils.DatabaseOps import sql_query
 class PatentsViewSet(viewsets.ViewSet):
     def get_patents(self, request):
         query = """
-                SELECT patent_name, date, patent_photo
+                SELECT id, patent_name, date, patent_photo
                 FROM patents_patent
                 WHERE is_active = 1;
         """

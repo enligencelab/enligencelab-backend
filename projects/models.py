@@ -7,6 +7,9 @@ from django.contrib.auth.models import User
 class Project(models.Model):
     project_name = models.CharField(max_length=200, null=True, default=None)
     date = models.DateField()
+    brief_description = models.TextField(blank=True, null=True, default="No Brief Description for this project")
+    detail_description = models.TextField(blank=True, null=True, default="No Detail Description for this project")
+    project_picture = models.ImageField(upload_to='static/projects/', default='static/projects/default.png')
     is_active = models.BooleanField(default=True)
 
     def __str__(self):

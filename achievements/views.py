@@ -8,7 +8,7 @@ from utils.DatabaseOps import sql_query
 class AchievementsViewSet(viewsets.ViewSet):
     def get_achievements(self, request):
         query = """
-                SELECT achievement_name, date
+                SELECT id, achievement_name, date
                 FROM achievements_achievement
                 WHERE is_active = 1;
         """

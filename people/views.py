@@ -8,7 +8,9 @@ from utils.DatabaseOps import sql_query
 class PeopleViewSet(viewsets.ViewSet):
     def get_teachers(self, request):
         query = """
-                SELECT user.username,
+                SELECT
+                    user.id, 
+                    user.username,
                     user.date_joined,
                     user.is_teacher,
                     user.github_account,
@@ -24,7 +26,9 @@ class PeopleViewSet(viewsets.ViewSet):
 
     def get_graduates(self, request):
         query = """
-                SELECT user.username,
+                SELECT
+                    user.id, 
+                    user.username,
                     user.date_joined,
                     user.graduated_date,
                     user.is_graduated,
@@ -40,13 +44,15 @@ class PeopleViewSet(viewsets.ViewSet):
 
     def get_undergraduates(self, request):
         query = """
-                SELECT user.username,
-                   user.date_joined,
-                   user.is_undergraduate,
-                   user.github_account,
-                   user.department,
-                   user.school,
-                   user.avatar
+                SELECT 
+                    user.id,
+                    user.username,
+                    user.date_joined,
+                    user.is_undergraduate,
+                    user.github_account,
+                    user.department,
+                    user.school,
+                    user.avatar
                 FROM (auth_user au inner join people_userprofile pu on au.id = pu.user_id) user
                 WHERE user.is_active = 1 and user.is_undergraduate = 1;
         """

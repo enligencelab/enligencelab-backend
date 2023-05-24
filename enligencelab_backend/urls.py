@@ -25,5 +25,5 @@ urlpatterns = [
     path("people/", include("people.urls")),
     path("patents/", include("patents.urls")),
     path("achievements/", include("achievements.urls")),
-    # path("projects/", include("projects.urls")),
+    path("projects/", include("projects.urls")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
