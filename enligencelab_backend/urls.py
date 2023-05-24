@@ -23,4 +23,5 @@ from django.conf import settings
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("people/", include("people.urls")),
+    path("patents/", include("patents.urls")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

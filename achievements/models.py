@@ -9,6 +9,8 @@ class Achievement(models.Model):
     achievement_name = models.CharField(max_length=200, null=True, default=None)
     date = models.DateField()
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    achievement_photo = models.ImageField(upload_to='static/achievement-photos/',
+                                          default='static/achievement-photos/default.jpg')
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -18,6 +20,4 @@ class Achievement(models.Model):
 class AchievementsDetail(models.Model):
     achievement = models.ForeignKey(Achievement, on_delete=models.CASCADE)
     people = models.ForeignKey(User, on_delete=models.CASCADE)
-    achievement_photo = models.ImageField(upload_to='static/achievement-photos/',
-                                          default='static/achievement-photos/default.jpg')
     is_active = models.BooleanField(default=True)
