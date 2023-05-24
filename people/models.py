@@ -16,4 +16,5 @@ class UserProfile(models.Model):
     phone_number = models.CharField(max_length=16, blank=True, null=True, default=None)
     school_id_number = models.CharField(max_length=10, null=True, default=None)
     github_account = models.CharField(max_length=100, blank=True, null=True, default=None)
+    title = models.CharField(max_length=100, blank=True, null=True, default=None)
 
