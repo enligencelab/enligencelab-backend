@@ -11,4 +11,7 @@ def sql_query(query):
     for row in rows:
         data.append(dict(zip(columns, row)))
 
+    if not data:
+        return [{"error": "No data found"}]
+
     return data
