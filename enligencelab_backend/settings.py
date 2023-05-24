@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     "patents.apps.PatentsConfig",
     "projects.apps.ProjectsConfig",
     "achievements.apps.AchievementsConfig",
+    "papers.apps.PapersConfig",
+    "books.apps.BooksConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
