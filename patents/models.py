@@ -16,5 +16,5 @@ class Patent(models.Model):
 class PatentsDetail(models.Model):
     patent = models.ForeignKey(Patent, on_delete=models.CASCADE)
     people = models.ForeignKey(User, on_delete=models.CASCADE)
-    patent_photo = models.ImageField(upload_to='patent-photos/', default='patent-photos/default.png')
+    patent_photo = models.ImageField(upload_to='static/patent-photos/', default='static/patent-photos/default.jpg')
     is_active = models.BooleanField(default=True)

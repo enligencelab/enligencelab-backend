@@ -4,11 +4,12 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    avatar = models.ImageField(upload_to='avatars/', default='avatars/default.png')
+    avatar = models.ImageField(upload_to='static/avatars/', default='static/avatars/default.png')
     is_teacher = models.BooleanField(default=False)
+    is_graduated = models.BooleanField(default=False)
+    is_undergraduate = models.BooleanField(default=False)
     joined_date = models.DateField()
     graduated_date = models.DateField(null=True, default=None, blank=True)
-    is_graduated = models.BooleanField(default=False)
     school = models.CharField(max_length=100, default='上海立信会计金融学院')
     department = models.CharField(max_length=100, default='信息管理学院')
     major = models.CharField(max_length=100, blank=True, null=True, default=None)
