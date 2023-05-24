@@ -20,7 +20,7 @@ class Book(models.Model):
                 BorrowRecord.objects.create(
                     book=self,
                     borrower=orig.borrower,
-                    borrow_time=self.borrow_time,
+                    borrow_time=orig.borrow_time,
                     return_time=timezone.now(),
                 )
         super().save(*args, **kwargs)
