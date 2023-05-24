@@ -2,7 +2,7 @@
 
 > **Critical Warning:**<br>
 > This guide is only for development environment. If you want to deploy this application into production, please turn
-> off the debug mode and set your own select key in `enligencelab_backend/settings.py`. Find more
+> off the debug mode and set your own secret key in `enligencelab_backend/settings.py`. Find more
 > at [Django Documentation](https://docs.djangoproject.com/en/4.2/).
 
 ## Introduction
