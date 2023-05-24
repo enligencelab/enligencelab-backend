@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from projects.models import Project
 
 
 # Create your models here.
@@ -7,6 +8,7 @@ from django.contrib.auth.models import User
 class Patent(models.Model):
     patent_name = models.CharField(max_length=100, null=True, default=None)
     date = models.DateField()
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
