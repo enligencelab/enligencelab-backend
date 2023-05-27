@@ -10,6 +10,7 @@ class Project(models.Model):
     brief_description = models.TextField(blank=True, null=True, default="No Brief Description for this project")
     detail_description = models.TextField(blank=True, null=True, default="No Detail Description for this project")
     project_picture = models.ImageField(upload_to='static/project-photos/', default='static/project-photos/default.png')
+    project_link = models.CharField(max_length=100, null=True, default=None, blank=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
